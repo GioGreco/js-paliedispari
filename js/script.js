@@ -52,7 +52,12 @@ const result2HTML = document.getElementById('result2');
 function gamblePC(){
     let pcNum = randomBetween(1,5);
     let myNum = parseInt(input2.value);
-    let oddEven = oddEvenHTML.value;
+    if(myNum > 5){
+        removeFirstNotification();
+        result2HTML.append(notifyError('Devi inserire un numero da 1 a 5!'));
+    }
+    else{
+        let oddEven = oddEvenHTML.value;
     pcBox.innerHTML = `${pcNum}`;
     let sum = pcNum + myNum;
     totSum.innerHTML = `TOTALE : ${sum}`;
@@ -70,6 +75,25 @@ function gamblePC(){
     else if(!(isEven(sum)) && oddEven == 'odd'){
         result2HTML.innerHTML = `HAI INDOVINATO`;
     }
+    }
+    // let oddEven = oddEvenHTML.value;
+    // pcBox.innerHTML = `${pcNum}`;
+    // let sum = pcNum + myNum;
+    // totSum.innerHTML = `TOTALE : ${sum}`;
+    // console.log(sum);
+    // console.log(oddEven);
+    // if(isEven(sum) && oddEven == 'even'){
+    //     result2HTML.innerHTML = `HAI INDOVINATO`;
+    // }
+    // else if(isEven(sum) && oddEven == 'odd'){
+    //     result2HTML.innerHTML = `SBAGLIATO`;
+    // }
+    // else if(!(isEven(sum)) && oddEven == 'even'){
+    //     result2HTML.innerHTML = `SBAGLIATO`;
+    // }
+    // else if(!(isEven(sum)) && oddEven == 'odd'){
+    //     result2HTML.innerHTML = `HAI INDOVINATO`;
+    // }
 }
 
 btn2.addEventListener('click', gamblePC);
