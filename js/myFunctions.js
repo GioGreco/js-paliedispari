@@ -6,3 +6,15 @@ let isPalindrome = function(string){
         return true;
     }
 };
+
+let randomBetween = function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+let isEven = function(num){
+    if(num % 2 === 0){
+        return true;
+    } else {
+        return false;
+    }
+};

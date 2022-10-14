@@ -38,3 +38,38 @@ function checkPal (){
 }
 
 btn1.addEventListener('click', checkPal);
+
+//SECOND EXERCISE
+
+const input2 = document.getElementById('inputVal');
+const oddEvenHTML = document.getElementById('odd-evenHTML');
+const btn2 = document.getElementById('btnVal');
+const selectHTML = document.querySelector('select');
+const pcBox = document.getElementById('pcNum');
+const totSum = document.querySelector('.totSum');
+const result2HTML = document.getElementById('result2');
+
+function gamblePC(){
+    let pcNum = randomBetween(1,5);
+    let myNum = parseInt(input2.value);
+    let oddEven = oddEvenHTML.value;
+    pcBox.innerHTML = `${pcNum}`;
+    let sum = pcNum + myNum;
+    totSum.innerHTML = `TOTALE : ${sum}`;
+    console.log(sum);
+    console.log(oddEven);
+    if(isEven(sum) && oddEven == 'even'){
+        result2HTML.innerHTML = `HAI INDOVINATO`;
+    }
+    else if(isEven(sum) && oddEven == 'odd'){
+        result2HTML.innerHTML = `SBAGLIATO`;
+    }
+    else if(!(isEven(sum)) && oddEven == 'even'){
+        result2HTML.innerHTML = `SBAGLIATO`;
+    }
+    else if(!(isEven(sum)) && oddEven == 'odd'){
+        result2HTML.innerHTML = `HAI INDOVINATO`;
+    }
+}
+
+btn2.addEventListener('click', gamblePC);
