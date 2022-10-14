@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+/* BUTTON */
+.next{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    background-color: black;
+    border: 5px solid white;
+    color: white;
+    border-radius: 50%;
+    line-height: 70px;
+    z-index: 200;
+    cursor: pointer;
+    transition: color 1s ease-in-out, border-color 1s ease-in-out;
+}
+
+.invert{
+    transform: scale(-1,1) translate(50%,-50%);
+}
+
+/* LEFT WORKSPACE */
+.container{
+    float: left;
+    border-bottom: 5px solid;
+    border-right: 5px solid;
+    border-image-source: linear-gradient(transparent 50%, red);
+    border-image-slice: 1;
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    transition: border-image-source 1s ease-in-out;
+}
+
+.purple{
+    border-color: purple;
+    color: purple;
+}
+
+.next:hover ~ .container{
+    border-image-source: linear-gradient(transparent 50%, purple 50%);
+    transition: border-image-source 1s ease-in-out;
+}
+
+.next:hover ~ .container .palindroma{
+    color: purple;
+    border: 5px solid purple;
+}
+
+.next:hover ~ .container .palindroma input{
+    color: purple;
+    border: 2px solid purple;
+    outline: purple;
+}
+
+.next:hover ~ .container .palindroma button{
+    background-color: purple;
+}
+
+.palindroma{
+    border: 5px solid red;
+    padding: 20px;
+    border-radius: 15px;
+    color: red;
+    transition: color 1s ease-in-out, border 1s ease-in-out;
+}
+
+
+.palindroma input{
+    background-color: transparent;
+    border: 2px solid red;
+    text-align: center;
+    outline: red;
+    color: red;
+    font-size: 1.5rem;
+    transition: color 1s ease-in-out, border 1s ease-in-out;
+}
+
+.palindroma button{
+    background-color: red;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 1s ease-in-out;
+}
+
+/* RIGHT WORKSPACE */
+.container2{
+    float: left;
+    border-top: 5px solid;
+    border-left: 5px solid;
+    border-image-source: linear-gradient(blue, transparent 50%);
+    border-image-slice: 1;
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+    transition: border-image-source 1s ease-in-out;
+}
+
+.blue{
+    border-color: blue;
+    color: blue;
+}
+
+.next:hover ~ .container2{
+    border-image-source: linear-gradient(purple 50%, transparent 50%);
+}
