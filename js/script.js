@@ -76,24 +76,6 @@ function gamblePC(){
         result2HTML.innerHTML = `HAI INDOVINATO`;
     }
     }
-    // let oddEven = oddEvenHTML.value;
-    // pcBox.innerHTML = `${pcNum}`;
-    // let sum = pcNum + myNum;
-    // totSum.innerHTML = `TOTALE : ${sum}`;
-    // console.log(sum);
-    // console.log(oddEven);
-    // if(isEven(sum) && oddEven == 'even'){
-    //     result2HTML.innerHTML = `HAI INDOVINATO`;
-    // }
-    // else if(isEven(sum) && oddEven == 'odd'){
-    //     result2HTML.innerHTML = `SBAGLIATO`;
-    // }
-    // else if(!(isEven(sum)) && oddEven == 'even'){
-    //     result2HTML.innerHTML = `SBAGLIATO`;
-    // }
-    // else if(!(isEven(sum)) && oddEven == 'odd'){
-    //     result2HTML.innerHTML = `HAI INDOVINATO`;
-    // }
 }
 
 btn2.addEventListener('click', gamblePC);
